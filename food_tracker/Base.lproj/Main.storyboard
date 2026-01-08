@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="boU-gz-VP1">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--App Launch View Controller-->
+        <scene sceneID="zUW-eg-hra">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController modalTransitionStyle="flipHorizontal" id="boU-gz-VP1" customClass="AppLaunchViewController" customModule="food_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ad8-az-UiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_image" translatesAutoresizingMaskIntoConstraints="NO" id="AEq-ti-2wp">
+                                <rect key="frame" x="-3.6666666666666572" y="196" width="400.33333333333326" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="UMi-6H-ZuR"/>
+                                    <constraint firstAttribute="width" secondItem="AEq-ti-2wp" secondAttribute="height" multiplier="1:1" id="jaw-98-xzf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counting calories…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1u-sz-6Lj">
+                                <rect key="frame" x="23.666666666666657" y="498.66666666666674" width="345.66666666666674" height="55"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9bL-8z-AMg">
+                                <rect key="frame" x="178" y="604" width="37" height="37"/>
+                                <color key="color" red="0.01352306134" green="0.031563579100000003" blue="0.065298807989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fFU-ze-wjC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9bL-8z-AMg" firstAttribute="top" secondItem="AEq-ti-2wp" secondAttribute="bottom" constant="8" symbolic="YES" id="0I9-1R-FNe"/>
+                            <constraint firstItem="AEq-ti-2wp" firstAttribute="centerY" secondItem="Ad8-az-UiQ" secondAttribute="centerY" constant="-30" id="2fK-YX-EE3"/>
+                            <constraint firstItem="M1u-sz-6Lj" firstAttribute="centerY" secondItem="Ad8-az-UiQ" secondAttribute="centerY" constant="100" id="SCw-zT-ODE"/>
+                            <constraint firstItem="9bL-8z-AMg" firstAttribute="centerX" secondItem="Ad8-az-UiQ" secondAttribute="centerX" id="Vyc-VB-KQQ"/>
+                            <constraint firstItem="AEq-ti-2wp" firstAttribute="centerX" secondItem="Ad8-az-UiQ" secondAttribute="centerX" id="fNA-lm-PWn"/>
+                            <constraint firstItem="M1u-sz-6Lj" firstAttribute="centerX" secondItem="Ad8-az-UiQ" secondAttribute="centerX" id="x3s-02-ahn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="B4N-zc-9bV"/>
+                    <connections>
+                        <segue destination="kfa-yg-asN" kind="show" identifier="presentDescriptionScreen" customClass="CustomSegue" customModule="food_tracker" customModuleProvider="target" id="8kV-zV-cIs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGc-mE-3yy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1367" y="149"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5z4-jg-ate">
+            <objects>
+                <viewController id="kfa-yg-asN" customClass="ViewController" customModule="food_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y3Y-lT-hTU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="u4d-in-tg2">
+                                <rect key="frame" x="21" y="59" width="350" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="roti" translatesAutoresizingMaskIntoConstraints="NO" id="rlT-1r-eEu">
+                                <rect key="frame" x="21" y="393" width="350" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6oI-hn-sxg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="awv-aq-yGL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDz-Tc-lr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480.15267175572518" y="148.59154929577466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pizza" width="1920" height="1080"/>
+        <image name="roti" width="1920" height="1080"/>
+        <image name="splash_image" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
