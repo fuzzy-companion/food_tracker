@@ -62,19 +62,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="u4d-in-tg2">
-                                <rect key="frame" x="21" y="59" width="350" height="350"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="WMD-E4-Bat">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="roti" translatesAutoresizingMaskIntoConstraints="NO" id="rlT-1r-eEu">
-                                <rect key="frame" x="21" y="393" width="350" height="228"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-Q4-7ZU">
+                                <rect key="frame" x="16" y="689" width="361" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Lxd-aa-Bkh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow.forward" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Eat easy" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="navigateToDashboard:" destination="kfa-yg-asN" eventType="touchUpInside" id="ZGm-BV-VrC"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="16U-NS-Vrd">
+                                <rect key="frame" x="327" y="703" width="20" height="14.333333333333371"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="fKB-Sc-J9n"/>
+                                    <constraint firstAttribute="width" secondItem="16U-NS-Vrd" secondAttribute="height" multiplier="1:1" id="iWl-sv-t69"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6oI-hn-sxg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WMD-E4-Bat" firstAttribute="leading" secondItem="6oI-hn-sxg" secondAttribute="leading" id="G9v-PN-PMJ"/>
+                            <constraint firstItem="aXy-Q4-7ZU" firstAttribute="leading" secondItem="6oI-hn-sxg" secondAttribute="leading" constant="16" id="Gps-wS-K9B"/>
+                            <constraint firstItem="6oI-hn-sxg" firstAttribute="bottom" secondItem="aXy-Q4-7ZU" secondAttribute="bottom" constant="62" id="Mw9-u8-kXY"/>
+                            <constraint firstItem="16U-NS-Vrd" firstAttribute="trailing" secondItem="aXy-Q4-7ZU" secondAttribute="trailing" constant="-30" id="Mx7-Qw-CR7"/>
+                            <constraint firstItem="6oI-hn-sxg" firstAttribute="trailing" secondItem="aXy-Q4-7ZU" secondAttribute="trailing" constant="16" id="OxY-1L-lLY"/>
+                            <constraint firstItem="WMD-E4-Bat" firstAttribute="top" secondItem="y3Y-lT-hTU" secondAttribute="top" id="R38-i5-Ixt"/>
+                            <constraint firstItem="6oI-hn-sxg" firstAttribute="bottom" secondItem="WMD-E4-Bat" secondAttribute="bottom" id="szB-nv-IFJ"/>
+                            <constraint firstItem="16U-NS-Vrd" firstAttribute="centerY" secondItem="aXy-Q4-7ZU" secondAttribute="centerY" id="upb-at-B7Y"/>
+                            <constraint firstItem="6oI-hn-sxg" firstAttribute="trailing" secondItem="WMD-E4-Bat" secondAttribute="trailing" id="w9H-KO-7m9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="awv-aq-yGL"/>
+                    <connections>
+                        <outlet property="navigationButton" destination="aXy-Q4-7ZU" id="qbd-J2-qgR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDz-Tc-lr1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,8 +114,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pizza" width="1920" height="1080"/>
-        <image name="roti" width="1920" height="1080"/>
+        <image name="arrow.forward" catalog="system" width="128" height="95"/>
+        <image name="food" width="3000" height="2000"/>
         <image name="splash_image" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
