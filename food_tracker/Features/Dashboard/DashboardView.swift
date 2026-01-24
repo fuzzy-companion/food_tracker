@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct DashboardView: View {
-    var body: some View {
-        Form {
-            Text("This is first text box")
-            Section {
-                Text("This is inside section text box")
-                Text("This is inside section second text box")
+    init() {
+        for family in UIFont.familyNames {
+            print(family)
+            for names in UIFont.fontNames(forFamilyName: family) {
+                print("== \(names)")
             }
-            Section {
-                Text("This is inside fourth section text box")
-                Text("This is inside fifth section text box")
+        }
+    }
+    var body: some View {
+        NavigationStack {
+            HStack {
+                ProfileImageComponent()
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Hello").font(LatoFonts.regular(14))
+                    Text("Hello").font(LatoFonts.regular(20))
+                }.padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
             }
         }
     }
