@@ -16,7 +16,7 @@ struct ProfileImageComponent: View {
             image?
                 .resizable()
                 .scaledToFill()
-                .frame(width: 48, height: 48)
+                .frame(width: 44, height: 44)
                 .clipShape(Circle())
                 .overlay(
                     Circle()

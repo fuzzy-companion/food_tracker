@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct DashboardView: View {
-    init() {
-        for family in UIFont.familyNames {
-            print(family)
-            for names in UIFont.fontNames(forFamilyName: family) {
-                print("== \(names)")
-            }
-        }
-    }
     var body: some View {
         NavigationStack {
-            HStack {
-                ProfileImageComponent()
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Hello").font(LatoFonts.regular(14))
-                    Text("Hello").font(LatoFonts.regular(20))
-                }.padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
+            VStack(spacing: 0) {
+                DashboardHeaderView().padding(.vertical, 16)
+                ScrollView {
+                    Text("Dashboard Content")
+                }
             }
+            .toolbar(.hidden)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
     }
 }

@@ -17,6 +17,7 @@ enum ThemeColors {
 
     static let textPrimary = Color(hex: "011627")
     static let textSecondary = Color(hex: "A5A5A5")
+    static let textTeritary = Color(hex: "6F6F6F")
 
     static let yellowSoft = Color(hex: "FFF18F")
     static let blueSoft = Color(hex: "68D2FF")
