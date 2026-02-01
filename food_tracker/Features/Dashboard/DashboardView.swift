@@ -9,16 +9,12 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                DashboardHeaderView().padding(.vertical, 16)
-                ScrollView {
-                    Text("Dashboard Content")
-                }
-            }
-            .toolbar(.hidden)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        VStack(spacing: 24) {
+            DashboardHeaderView()
+            DailyProgressTracker(days: 7).padding(.horizontal, 8)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.all, 4)
     }
 }
 

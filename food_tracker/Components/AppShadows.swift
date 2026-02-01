@@ -10,7 +10,7 @@ import SwiftUI
 struct DropShadowLight: ViewModifier {
     func body(content: Content) -> some View {
         content.shadow(
-            color: ThemeColors.textSecondary.opacity(0.5),
+            color: ThemeColors.textSecondary.opacity(0.3),
             radius: 10,
             x: 0,
             y: 2

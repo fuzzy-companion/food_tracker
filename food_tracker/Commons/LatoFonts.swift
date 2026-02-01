@@ -12,12 +12,12 @@ enum LatoFonts {
         .custom("Lato-Regular", size: size)
     }
     
+    static func light(_ size: CGFloat) -> Font {
+        .custom("Lato-Light", size: size)
+    }
+    
     static func thin(_ size: CGFloat) -> Font {
         .custom("Lato-Thin", size: size)
-    }
-
-    static func medium(_ size: CGFloat) -> Font {
-        .custom("Lato-Medium", size: size)
     }
 
     static func bold(_ size: CGFloat) -> Font {
