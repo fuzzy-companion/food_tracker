@@ -1,3 +1,7 @@
+---
+inclusion: always
+---
+
 # Kiro Instructions — Large-Scale iOS Swift/VIPER Project
 
 You are an AI coding agent working on an existing, large-scale production iOS application written in Swift, using UIKit, SwiftUI, and VIPER architecture.
