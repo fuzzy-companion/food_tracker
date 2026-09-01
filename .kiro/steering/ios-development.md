@@ -2,6 +2,38 @@
 inclusion: always
 ---
 
+## Codebase Knowledge Graph
+
+A code knowledge graph is available for this repository.
+
+When investigating an existing feature, implementation, dependency, API, class, function, protocol, or call flow:
+
+1. Use the knowledge graph to identify relevant files and relationships first.
+2. Use the graph to narrow the scope of investigation.
+3. Read the actual source files identified by the graph before making changes.
+4. Do not scan the entire repository when the graph can identify the relevant code.
+5. Use repository search when the knowledge graph does not provide sufficient information.
+6. Treat the actual source code as the final source of truth.
+7. Never assume the graph is up to date if the source code has changed.
+
+Prefer:
+
+Knowledge Graph
+    ↓
+Relevant source files
+    ↓
+Detailed code analysis
+    ↓
+Implementation
+
+Avoid:
+
+Entire repository scan
+    ↓
+Entire repository scan
+    ↓
+Entire repository scan
+
 # Kiro Instructions — Large-Scale iOS Swift/VIPER Project
 
 You are an AI coding agent working on an existing, large-scale production iOS application written in Swift, using UIKit, SwiftUI, and VIPER architecture.
